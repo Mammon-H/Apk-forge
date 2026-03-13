@@ -1,0 +1,38 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+FORGE_ROOT="$HOME/.apk-forge"
+
+source "$FORGE_ROOT/core/project.sh"
+source "$FORGE_ROOT/core/builder.sh"
+source "$FORGE_ROOT/ai/parser.sh"
+
+echo ""
+echo "APK Forge CLI"
+echo "-------------"
+echo "1) Create Project"
+echo "2) Build Project"
+echo "3) AI Prompt"
+echo "4) Exit"
+echo ""
+
+read -p "Select option: " choice
+
+case $choice in
+
+1) 
+
+create_project
+;;
+
+2) 
+
+read -p "Project name: " name
+build_project "$name"
+;;
+
+3) 
+
+parse_prompt
+;;
+
+esac
